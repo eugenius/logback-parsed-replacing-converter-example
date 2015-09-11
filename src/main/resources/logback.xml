@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="false" debug="false">
+
+    <conversionRule conversionWord="replaceAndParse" converterClass="ch.qos.logback.core.pattern.ReplacingAndParsingCompositeConverter" />
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>[%d{HH:mm:ss.SSS}] %-5level %msg%replaceAndParse(%xException){"(\r?\n)", "$1[%d{HH:mm:ss.SSS}]"}%nopex%n</Pattern>
+        </layout>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
